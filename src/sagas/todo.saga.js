@@ -44,7 +44,6 @@ export function* watchCreateTodo() {
     yield takeLatest(todoConstants.CREATE_TODO, createTodo)
 }
 
-
 export function* watchFetchTodos() {
     yield takeLatest(todoConstants.GET_ALL_TODOS, fetchTodos)
 }

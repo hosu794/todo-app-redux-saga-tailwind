@@ -19,10 +19,12 @@ const App = () => {
     
 
   return (
-    <div>
-      Hello Sagas
+    <div className="bg-yellow-300 font-mono">
+    <div className="md:container md:mx-auto">
+     <h1 className='text-white antialiased font-semibold tracking-wide py-5 text-center text-4xl'>Todo list with redux saga</h1>
       <TodoForm />
      <TodoList todos={todos} />
+    </div>
     </div>
   )
 }

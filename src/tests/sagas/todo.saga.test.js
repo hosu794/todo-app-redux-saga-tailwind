@@ -1,8 +1,8 @@
-import { todoConstants } from '../constants';
-import { fetchTodos, createTodo, deleleTodo } from '../sagas/todo.saga';
+import { todoConstants } from '../../constants';
+import { fetchTodos, createTodo, deleleTodo } from '../../sagas/todo.saga';
 
 import { runSaga } from 'redux-saga';
-import {todoService} from '../services';
+import {todoService} from '../../services'
 
 describe('fetchTodos', () => {
   it('should call api and dispatch fulfillment action', async () => {
@@ -41,7 +41,6 @@ describe('fetchTodos', () => {
   })
 
 });
-
 
 describe('craeteTodo', () => {
 
@@ -113,7 +112,6 @@ describe('deleleTodo',  () => {
   })
 
   it("should call api dispatch reject action", async () => {
-
 
     const dummyIndex = 12;
     const mockError = new Error("Some error")

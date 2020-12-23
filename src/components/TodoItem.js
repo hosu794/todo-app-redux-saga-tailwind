@@ -19,8 +19,8 @@ const TodoItem = ({id, title, completed}) => {
     }
 
     return(
-        <div>
-        <h1 onClick={onComplete} style={isChecked}>{title}</h1>
+        <div className="relative py-6 shadow-2xl bg-white rounded-full flex flex-row items-center">
+        <h1 className="mx-5 text-lg" onClick={onComplete} style={isChecked}>{title}</h1>
         <TodoDeleteButton onClick={handleDelete} />
         </div>
     )
