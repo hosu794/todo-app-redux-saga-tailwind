@@ -26,7 +26,7 @@ const TodoForm = () => {
       <input className="bg-gray-200 focus:bg-white p-2 rounded-lg" type="text" placeholder="Title" name="title" ref={register({required: true, maxLength: 80, minLength: 3})} />
       {errors.title && <span>This field is required</span>}
       {errors.title?.type === "minLength" && "Your input exceed maxLength"}
-      <input type="submit" className="text-white mx-3 bg-blue-500 md:bg-green-500 rounded-lg py-3 px-6 ring-4 ring-green-500 ring-opacity-50"/>
+      <input type="submit" value='Submit' className="text-white mx-3 bg-blue-500 md:bg-green-500 rounded-lg py-3 px-6 ring-4 ring-green-500 ring-opacity-50"/>
  
     </form>
         </div>
