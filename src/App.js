@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+import { todoConstants } from './constants';
 
-function App() {
+const App = () => {
+  
+  const dispatch = useDispatch()
+  const todos = useSelector(state => state.todos.todos)
+
+  const takeAll = useCallback(() => {
+    dispatch({type: todoConstants.GET_ALL_TODOS})
+  }, [dispatch])
+
+  useEffect(() => {
+    takeAll()
+  }, [takeAll])
+    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello Sagas
+      <TodoForm />
+     <TodoList todos={todos} />
     </div>
-  );
+  )
 }
+
+
 
 export default App;
